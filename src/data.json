@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "name": "Galery Opening",
+    "path": "https://res.cloudinary.com/dorqebe0a/image/upload/v1691064110/uqdu9mefgm5z3xic2fqe.jpg",
+    "date": "12.07",
+    "time": "12.00",
+    "place": "Kyiv",
+    "category": "Art",
+    "priority": "High",
+    "description": "Unlock the secrets of effective leadership at our transformative Success Leadership Conference."
+  },
+  {
+    "id": "2",
+    "name": "Innovation Summit",
+    "path": "https://res.cloudinary.com/dorqebe0a/image/upload/v1691064111/nb8mwllp0j0kiit4jj2l.jpg",
+    "date": "12.07",
+    "time": "12.00",
+    "place": "Kyiv",
+    "category": "Conference",
+    "priority": "Medium",
+    "description": "Unlock the secrets of effective leadership at our transformative Success Leadership Conference."
+  },
+  {
+    "id": "3",
+    "name": "Empower Your Creativity",
+    "path": "https://res.cloudinary.com/dorqebe0a/image/upload/v1691064110/vgzjpnzypb0oz2pevh4a.jpg",
+    "date": "12.07",
+    "time": "12.00",
+    "place": "Kyiv",
+    "category": "Workshop",
+    "priority": "High",
+    "description": "Unlock the secrets of effective leadership at our transformative Success Leadership Conference."
+  },
+  {
+    "id": "4",
+    "name": "Summer Soiree",
+    "path": "https://res.cloudinary.com/dorqebe0a/image/upload/v1691064111/oyc2s6mtq2otm03kkxvy.jpg",
+    "date": "12.07",
+    "time": "12.00",
+    "place": "Kyiv",
+    "category": "Party",
+    "priority": "High",
+    "description": "Unlock the secrets of effective leadership at our transformative Success Leadership Conference."
+  },
+  {
+    "id": "5",
+    "name": "Leadership Conference",
+    "path": "https://res.cloudinary.com/dorqebe0a/image/upload/v1691064111/scoqlhuccd1pc5sbhiul.jpg",
+    "date": "12.07",
+    "time": "12.00",
+    "place": "Kyiv",
+    "category": "Business",
+    "priority": "Medium",
+    "description": "Unlock the secrets of effective leadership at our transformative Success Leadership Conference."
+  },
+  {
+    "id": "6",
+    "name": "Tech Startup Showcase",
+    "path": "https://res.cloudinary.com/dorqebe0a/image/upload/v1691064112/matcpuw9zxqoslqrvz9g.jpg",
+    "date": "12.07",
+    "time": "12.00",
+    "place": "Kyiv",
+    "category": "Workshop",
+    "priority": "Low",
+    "description": "Witness the future of technology as innovative startups showcase their groundbreaking ideas."
+  },
+  {
+    "id": "7",
+    "name": "Acoustic Garden Concert",
+    "path": "https://res.cloudinary.com/dorqebe0a/image/upload/v1691064111/im2ldejxpdgb5bcrgbox.jpg",
+    "date": "12.07",
+    "time": "12.00",
+    "place": "Kyiv",
+    "category": "Music",
+    "priority": "High",
+    "description": "Experience the magic of live music amidst the serene beauty of nature at our Acoustic Garden Concert."
+  },
+  {
+    "id": "8",
+    "name": "Extreme Adventure Race",
+    "path": "https://res.cloudinary.com/dorqebe0a/image/upload/v1691064112/ppekghtqttdm2blkqpxu.jpg",
+    "date": "12.07",
+    "time": "12.00",
+    "place": "Kyiv",
+    "category": "Sport",
+    "priority": "Low",
+    "description": "Calling all thrill-seekers! Embark on an adrenaline-pumping journey at our Extreme Adventure Race."
+  }
+]
