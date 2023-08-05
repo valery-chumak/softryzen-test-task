@@ -11,6 +11,8 @@ import {
   Wrapper,
   Priority,
   CategoryWrapper,
+  Button,
+  ButtonWrapper,
 } from './EventItem.styled';
 const priorityToColor = {
   Low: '#6BD475',
@@ -41,6 +43,9 @@ export class EventItem extends Component {
         </Wrapper>
         <Title>{name}</Title>
         <Description>{description}</Description>
+        <ButtonWrapper id="button-container">
+          <Button>More info</Button>
+        </ButtonWrapper>
       </Item>
     );
   }

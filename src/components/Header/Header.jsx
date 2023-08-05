@@ -7,6 +7,7 @@ import {
   Search,
   Language,
   IconDown,
+  MainContainer,
 } from './Header.styled';
 
 import { BsSearch, BsChevronDown } from 'react-icons/bs';
@@ -15,19 +16,21 @@ export class Header extends Component {
   render() {
     return (
       <Section>
-        <Logo>Event Planner</Logo>
-        <Search>
-          <Icon>
-            <BsSearch size={18} />
-          </Icon>
-          <SearchBar placeholder="Search by keywords"></SearchBar>
-        </Search>
-        <Language>
-          UK
-          <IconDown>
-            <BsChevronDown />
-          </IconDown>
-        </Language>
+        <MainContainer>
+          <Logo>Event Planner</Logo>
+          <Search>
+            <Icon>
+              <BsSearch size={18} />
+            </Icon>
+            <SearchBar placeholder="Search by keywords"></SearchBar>
+          </Search>
+          <Language>
+            UK
+            <IconDown>
+              <BsChevronDown />
+            </IconDown>
+          </Language>
+        </MainContainer>
       </Section>
     );
   }

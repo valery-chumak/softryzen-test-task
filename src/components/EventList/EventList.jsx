@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EventItem from 'components/EventItem/EventItem';
-import { List, Section } from './EventList.styled';
+import { List } from './EventList.styled';
 export class EventList extends Component {
   render() {
     const { items } = this.props;
@@ -31,11 +31,7 @@ export class EventList extends Component {
         );
       }
     );
-    return (
-      <Section>
-        <List>{elements}</List>
-      </Section>
-    );
+    return <List>{elements}</List>;
   }
 }
 
