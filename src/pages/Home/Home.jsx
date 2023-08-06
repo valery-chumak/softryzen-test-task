@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
+
 import EventList from 'components/EventList/EventList';
 import data from '../../data.json';
 import { CiFilter } from 'react-icons/ci';
@@ -31,6 +31,7 @@ import {
   ButtonName,
 } from './Home.styled';
 export default function Home() {
+  // eslint-disable-next-line
   const [items, setItems] = useState(data);
   const [filter, setFilter] = useState('');
   const [error, setError] = useState(null);
