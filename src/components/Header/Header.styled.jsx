@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-
+import { Link } from 'react-router-dom';
 export const Section = styled.section`
   border: 0px 0px 1px 0px;
   border-bottom: 1px solid rgba(123, 97, 255, 1);
@@ -11,7 +11,7 @@ export const MainContainer = styled.div`
   width: 320px;
   height: 168px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 
   @media (min-width: 768px) {
     width: 768px;
@@ -25,6 +25,14 @@ export const MainContainer = styled.div`
     height: 92px;
   }
 `;
+export const StyledLink = styled(Link)`
+  color: #7b61ff;
+  font-family: Alata;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
 export const Logo = styled.span`
   display: block;
   width: 147px;
@@ -32,12 +40,6 @@ export const Logo = styled.span`
 
   margin-right: 56px;
 
-  color: #7b61ff;
-  font-family: Alata;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   @media (min-width: 768px) {
     margin-right: auto;
   }

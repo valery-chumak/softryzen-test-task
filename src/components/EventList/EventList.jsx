@@ -19,6 +19,7 @@ export class EventList extends Component {
         return (
           <EventItem
             key={id}
+            id={id}
             name={name}
             path={path}
             date={date}

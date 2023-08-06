@@ -10,7 +10,7 @@ export default function UserRoute() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Home />} />
-        <Route path="/AddEvent" element={<AddEvent />} />
+        <Route path="/add" element={<AddEvent />} />
         <Route path="/events/:eventId" element={<EventDetails />}></Route>
       </Routes>
     </Suspense>

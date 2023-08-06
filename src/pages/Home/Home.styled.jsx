@@ -21,7 +21,7 @@ export const Section = styled.section`
 export const MainContainer = styled.div`
   width: 320px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 24px;
   height: -webkit-fill-available;
   @media (min-width: 768px) {
     width: 768px;

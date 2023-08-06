@@ -20,23 +20,26 @@ import {
 } from './Home.styled';
 export default function Home() {
   const [items, setItems] = useState(data);
+  const [filter, setFilter] = useState('');
   const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   fetchPopularMovie();
-  // }, []);
-  // const fetchPopularMovie = async () => {
-  //   try {
-  //     setLoading(true);
-  //     setError(null);
-  //     const data = await getPopularMovie();
-  //     setItems(prev => [...prev, ...data.results]);
-  //   } catch (error) {
-  //     setError(true);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const handleChange = e => {
+    const { value } = e.target;
+    setFilter(value);
+  };
+  function getFilteredEvents() {
+    if (!filter) {
+      return items;
+    }
+    const normalizedFilter = filter.toLocaleLowerCase();
+    const filteredEvents = items.filter(({ name }) => {
+      const normalizedName = name.toLocaleLowerCase();
+      const result = normalizedName.includes(normalizedFilter);
+      return result;
+    });
+    return filteredEvents;
+  }
+  const eventsFiltered = getFilteredEvents();
   return (
     <Section>
       <MainContainer>
@@ -65,7 +68,7 @@ export default function Home() {
           </ButtonWrapper>
         </FilterBlock>
 
-        <EventList items={items} />
+        <EventList items={eventsFiltered} />
       </MainContainer>
     </Section>
   );

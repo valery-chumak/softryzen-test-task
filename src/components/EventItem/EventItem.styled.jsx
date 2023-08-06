@@ -1,12 +1,21 @@
 import styled from '@emotion/styled';
-
+import { Link } from 'react-router-dom';
+export const StyledLink = styled(Link)`
+  color: var(--m-3-sys-light-on-primary, #fff);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+`;
 export const Item = styled.li`
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: white;
-  width: 272px;
+  width: inherit;
   height: 480px;
   flex-direction: column;
 
@@ -15,7 +24,11 @@ export const Item = styled.li`
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
 
   @media (min-width: 768px) {
+    max-width: 332px;
+  }
+  @media (min-width: 1280px) {
     width: 302px;
+    height: 480px;
   }
 
   &:hover,
@@ -25,23 +38,34 @@ export const Item = styled.li`
   &:hover #button-container,
   &:focus #button-container {
     display: flex;
-    justify-content: flex-end;
+    transform: translate(0px, -30px);
+  }
+  &:hover #time-info,
+  &:hover #title,
+  &:hover #description {
+    transform: translateY(-30px);
   }
 `;
 export const ButtonWrapper = styled.div`
   display: none;
+  justify-content: flex-end;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   height: 64px;
   padding: 8px 16px 16px 16px;
 
-  width: 270px;
-  height: 40px;
+  width: inherit;
+
   padding: 8px 16px 16px 16px;
+  margin-left: auto;
+  @media (min-width: 768px) {
+    width: auto;
+  }
 `;
 
 export const Button = styled.button`
-  display: none;
-  width: 66px;
-  height: 20px;
+  width: 114px;
+  height: 40px;
   padding: 10px 24px;
 
   justify-content: center;
@@ -49,21 +73,16 @@ export const Button = styled.button`
   gap: 10px;
   border-radius: 8px;
   background: #7b61ff;
-
-  color: var(--m-3-sys-light-on-primary, #fff);
-  text-align: center;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px; /* 142.857% */
 `;
 export const Image = styled.img`
   display: block;
-  width: 272px;
+  width: -webkit-fill-available;
   height: 360px;
   z-index: 3;
   @media (min-width: 768px) {
+    width: -webkit-fill-available;
+  }
+  @media (min-width: 1280px) {
     width: 302px;
   }
 `;
@@ -118,6 +137,9 @@ export const Title = styled.h2`
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
+  background-color: white;
+  transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 export const Wrapper = styled.div`
   position: relative;
@@ -136,8 +158,12 @@ export const TimeInfo = styled.div`
   font-weight: 400;
   line-height: 24px; /* 171.429% */
   background: rgba(255, 255, 255, 0.8);
-
+  transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   @media (min-width: 768px) {
+    width: -webkit-fill-available;
+  }
+  @media (min-width: 1280px) {
     width: 302px;
   }
 `;
@@ -157,5 +183,7 @@ export const Description = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
-  background: #fff;
+  background-color: white;
+  transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;

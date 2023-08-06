@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import {
   Section,
   Logo,
@@ -8,6 +9,7 @@ import {
   Language,
   IconDown,
   MainContainer,
+  StyledLink,
 } from './Header.styled';
 
 import { BsSearch, BsChevronDown } from 'react-icons/bs';
@@ -17,7 +19,10 @@ export class Header extends Component {
     return (
       <Section>
         <MainContainer>
-          <Logo>Event Planner</Logo>
+          <Logo>
+            <StyledLink to="/">Event Planner</StyledLink>
+          </Logo>
+
           <Search>
             <Icon>
               <BsSearch size={18} />

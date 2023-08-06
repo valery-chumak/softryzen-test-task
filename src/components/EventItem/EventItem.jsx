@@ -13,7 +13,9 @@ import {
   CategoryWrapper,
   Button,
   ButtonWrapper,
+  StyledLink,
 } from './EventItem.styled';
+
 const priorityToColor = {
   Low: '#6BD475',
   Medium: '#E2A300',
@@ -21,8 +23,17 @@ const priorityToColor = {
 };
 export class EventItem extends Component {
   render() {
-    const { name, path, date, time, place, category, priority, description } =
-      this.props;
+    const {
+      id,
+      name,
+      path,
+      date,
+      time,
+      place,
+      category,
+      priority,
+      description,
+    } = this.props;
     return (
       <Item>
         <CategoryWrapper>
@@ -34,17 +45,19 @@ export class EventItem extends Component {
 
         <Wrapper>
           <Image src={path} alt={name} />
-          <TimeInfo>
+          <TimeInfo id="time-info">
             <Time>
               {date} at {time}
             </Time>
             <Place>{place}</Place>
           </TimeInfo>
         </Wrapper>
-        <Title>{name}</Title>
-        <Description>{description}</Description>
+        <Title id="title">{name}</Title>
+        <Description id="description">{description}</Description>
         <ButtonWrapper id="button-container">
-          <Button>More info</Button>
+          <Button>
+            <StyledLink to={`/events/${id}`}>More info</StyledLink>
+          </Button>
         </ButtonWrapper>
       </Item>
     );
