@@ -1,13 +1,26 @@
 {
   "files": {
-    "main.css": "/softryzen-test-task/static/css/main.9be35373.css",
-    "main.js": "/softryzen-test-task/static/js/main.c88d0560.js",
+    "main.css": "/softryzen-test-task/static/css/main.1340d65d.css",
+    "main.js": "/softryzen-test-task/static/js/main.a19d1912.js",
+    "static/js/271.d135f54e.chunk.js": "/softryzen-test-task/static/js/271.d135f54e.chunk.js",
+    "static/js/799.74d427fa.chunk.js": "/softryzen-test-task/static/js/799.74d427fa.chunk.js",
+    "static/js/398.790c0e7e.chunk.js": "/softryzen-test-task/static/js/398.790c0e7e.chunk.js",
+    "static/js/927.282b91d4.chunk.js": "/softryzen-test-task/static/js/927.282b91d4.chunk.js",
+    "static/js/820.c1b626b6.chunk.js": "/softryzen-test-task/static/js/820.c1b626b6.chunk.js",
+    "static/js/942.f7c45ad0.chunk.js": "/softryzen-test-task/static/js/942.f7c45ad0.chunk.js",
+    "static/media/background.png": "/softryzen-test-task/static/media/background.e1f3bf3d03ea71d69701.png",
     "index.html": "/softryzen-test-task/index.html",
-    "main.9be35373.css.map": "/softryzen-test-task/static/css/main.9be35373.css.map",
-    "main.c88d0560.js.map": "/softryzen-test-task/static/js/main.c88d0560.js.map"
+    "main.1340d65d.css.map": "/softryzen-test-task/static/css/main.1340d65d.css.map",
+    "main.a19d1912.js.map": "/softryzen-test-task/static/js/main.a19d1912.js.map",
+    "271.d135f54e.chunk.js.map": "/softryzen-test-task/static/js/271.d135f54e.chunk.js.map",
+    "799.74d427fa.chunk.js.map": "/softryzen-test-task/static/js/799.74d427fa.chunk.js.map",
+    "398.790c0e7e.chunk.js.map": "/softryzen-test-task/static/js/398.790c0e7e.chunk.js.map",
+    "927.282b91d4.chunk.js.map": "/softryzen-test-task/static/js/927.282b91d4.chunk.js.map",
+    "820.c1b626b6.chunk.js.map": "/softryzen-test-task/static/js/820.c1b626b6.chunk.js.map",
+    "942.f7c45ad0.chunk.js.map": "/softryzen-test-task/static/js/942.f7c45ad0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9be35373.css",
-    "static/js/main.c88d0560.js"
+    "static/css/main.1340d65d.css",
+    "static/js/main.a19d1912.js"
   ]
 }
