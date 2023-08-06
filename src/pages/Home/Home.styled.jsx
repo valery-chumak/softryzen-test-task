@@ -54,6 +54,8 @@ export const FilterBlock = styled.div`
   display: flex;
   padding-bottom: 40px;
 
+  width: inherit;
+
   @media (min-width: 768px) {
     flex-direction: column;
   }
@@ -65,6 +67,7 @@ export const FilterBlock = styled.div`
 export const ButtonWrapper = styled.div`
   display: flex;
   margin-left: auto;
+
   @media (min-width: 768px) {
     order: 1;
   }

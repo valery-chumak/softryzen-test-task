@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import data from '../../data.json';
+import Header from 'components/Header/Header';
 import {
   MainContainer,
   Section,
@@ -47,35 +48,38 @@ export default function EventDetails() {
       {loading && <p>Loading...</p>}
       {error && <p>Something went wrong</p>}
       {state && (
-        <Section>
-          <MainContainer>
-            <StyledLink>
-              <Icon>
-                <AiOutlineArrowLeft />
-              </Icon>
-              Back
-            </StyledLink>
-            <Title>{state.name}</Title>
-            <Item>
-              <Image src={state.path} alt={state.name} />
-              <Description id="description">{state.description}</Description>
-              <ListInfo>
-                <Info>{state.category}</Info>
-                <Info style={{ color: priorityToColor[state.priority] }}>
-                  {state.priority}
-                </Info>
-                <Info>{state.place}</Info>
-                <Info>
-                  {state.date} at {state.time}
-                </Info>
-              </ListInfo>
-              <ButtonWrapper>
-                <ButtonEdit>Edit</ButtonEdit>
-                <ButtonDelete>Delete</ButtonDelete>
-              </ButtonWrapper>
-            </Item>
-          </MainContainer>
-        </Section>
+        <>
+          <Header />
+          <Section>
+            <MainContainer>
+              <StyledLink to="/">
+                <Icon>
+                  <AiOutlineArrowLeft />
+                </Icon>
+                Back
+              </StyledLink>
+              <Title>{state.name}</Title>
+              <Item>
+                <Image src={state.path} alt={state.name} />
+                <Description id="description">{state.description}</Description>
+                <ListInfo>
+                  <Info>{state.category}</Info>
+                  <Info style={{ color: priorityToColor[state.priority] }}>
+                    {state.priority}
+                  </Info>
+                  <Info>{state.place}</Info>
+                  <Info>
+                    {state.date} at {state.time}
+                  </Info>
+                </ListInfo>
+                <ButtonWrapper>
+                  <ButtonEdit>Edit</ButtonEdit>
+                  <ButtonDelete>Delete</ButtonDelete>
+                </ButtonWrapper>
+              </Item>
+            </MainContainer>
+          </Section>
+        </>
       )}
     </>
   );

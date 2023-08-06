@@ -1,5 +1,10 @@
 import React from 'react';
-
+import Header from 'components/Header/Header';
 export default function AddEvent() {
-  return <div>AddEvent</div>;
+  return (
+    <div>
+      <Header />
+      AddEvent
+    </div>
+  );
 }
