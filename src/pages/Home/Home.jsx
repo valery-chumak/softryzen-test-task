@@ -41,16 +41,20 @@ export default function Home() {
   };
 
   function getFilteredEvents() {
-    if (!filter) {
-      return items;
+    try {
+      if (!filter) {
+        return items;
+      }
+      const normalizedFilter = filter.toLocaleLowerCase();
+      const filteredEvents = items.filter(({ name }) => {
+        const normalizedName = name.toLocaleLowerCase();
+        const result = normalizedName.includes(normalizedFilter);
+        return result;
+      });
+      return filteredEvents;
+    } catch (e) {
+      setError(e);
     }
-    const normalizedFilter = filter.toLocaleLowerCase();
-    const filteredEvents = items.filter(({ name }) => {
-      const normalizedName = name.toLocaleLowerCase();
-      const result = normalizedName.includes(normalizedFilter);
-      return result;
-    });
-    return filteredEvents;
   }
 
   const eventsFiltered = getFilteredEvents();
