@@ -31,8 +31,7 @@ import {
   ButtonName,
 } from './Home.styled';
 export default function Home() {
-  // eslint-disable-next-line
-  const [items, setItems] = useState(data);
+  const [items] = useState(data);
   const [filter, setFilter] = useState('');
   const [error, setError] = useState(null);
 
