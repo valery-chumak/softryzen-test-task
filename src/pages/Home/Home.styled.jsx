@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import background from '../../images/background.png';
+import { Link } from 'react-router-dom';
 export const Section = styled.section`
   position: absolute;
   bottom: 0;
@@ -124,16 +125,16 @@ export const SortButton = styled.button`
   }
 `;
 export const AddButton = styled.button`
-  display: flex;
   width: 56px;
   height: 56px;
   padding: 16px;
-
+  display: flex;
   justify-content: center;
   align-items: center;
+  color: rgba(255, 255, 255, 1);
   border-radius: 8px;
   background: #7b61ff;
-  color: rgba(255, 255, 255, 1);
+
   /* sdw2 */
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
 
@@ -142,7 +143,7 @@ export const AddButton = styled.button`
     padding: 16px 12px;
   }
 `;
-
+export const StyledLink = styled(Link)``;
 export const IconFilter = styled.span`
   display: flex;
   align-items: center;

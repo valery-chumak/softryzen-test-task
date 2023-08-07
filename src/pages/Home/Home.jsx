@@ -30,6 +30,7 @@ import {
   IconAdd,
   ButtonName,
 } from './Home.styled';
+import { Link } from 'react-router-dom';
 export default function Home() {
   const [items] = useState(data);
   const [filter, setFilter] = useState('');
@@ -103,12 +104,14 @@ export default function Home() {
                   <LiaSlidersHSolid size={18} />
                 </IconSlider>
               </SortButton>
-              <AddButton>
-                <IconAdd>
-                  <AiOutlinePlus size={18} />
-                </IconAdd>
-                <ButtonName>Add new event</ButtonName>
-              </AddButton>
+              <Link to="/add">
+                <AddButton>
+                  <IconAdd>
+                    <AiOutlinePlus size={18} />
+                  </IconAdd>
+                  <ButtonName>Add new event</ButtonName>
+                </AddButton>
+              </Link>
             </ButtonWrapper>
           </FilterBlock>
 
