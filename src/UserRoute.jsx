@@ -8,7 +8,7 @@ const EventDetails = lazy(() => import('pages/EventDetails/EventDetails'));
 const AddEvent = lazy(() => import('pages/AddEvent/AddEvent'));
 
 export default function UserRoute() {
-  const [events, setEvents] = useState(data);
+  const [setEvents] = useState(data);
   const addEvent = event => {
     setEvents(prev => {
       const newEvent = {

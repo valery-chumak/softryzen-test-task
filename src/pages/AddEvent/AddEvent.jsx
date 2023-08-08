@@ -43,7 +43,7 @@ export default function AddEvent({ onSubmit }) {
   };
 
   const [state, setState] = useState(initialState);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -66,22 +66,22 @@ export default function AddEvent({ onSubmit }) {
   const resetForm = () => {
     setState(initialState);
   };
-  const handleSubmit = event => {
-    event.preventDefault();
-    const { name, path, date, time, place, category, priority, description } =
-      state;
-    onSubmit({
-      name,
-      path,
-      date,
-      time,
-      place,
-      category,
-      priority,
-      description,
-    });
-    resetForm();
-  };
+  // const handleSubmit = event => {
+  //   event.preventDefault();
+  //   const { name, path, date, time, place, category, priority, description } =
+  //     state;
+  //   onSubmit({
+  //     name,
+  //     path,
+  //     date,
+  //     time,
+  //     place,
+  //     category,
+  //     priority,
+  //     description,
+  //   });
+  //   resetForm();
+  // };
   return (
     <>
       {loading && <p>Loading...</p>}(
