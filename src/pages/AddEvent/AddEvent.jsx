@@ -63,9 +63,9 @@ export default function AddEvent({ onSubmit }) {
       };
     });
   };
-  const resetForm = () => {
-    setState(initialState);
-  };
+  // const resetForm = () => {
+  //   setState(initialState);
+  // };
   // const handleSubmit = event => {
   //   event.preventDefault();
   //   const { name, path, date, time, place, category, priority, description } =
