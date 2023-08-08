@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/softryzen-test-task/static/css/main.1340d65d.css",
-    "main.js": "/softryzen-test-task/static/js/main.276d08e9.js",
-    "static/js/271.6f583375.chunk.js": "/softryzen-test-task/static/js/271.6f583375.chunk.js",
+    "main.js": "/softryzen-test-task/static/js/main.677485cf.js",
+    "static/js/271.598e8acc.chunk.js": "/softryzen-test-task/static/js/271.598e8acc.chunk.js",
     "static/js/63.5370ae60.chunk.js": "/softryzen-test-task/static/js/63.5370ae60.chunk.js",
     "static/js/739.fee40519.chunk.js": "/softryzen-test-task/static/js/739.fee40519.chunk.js",
     "static/js/276.9a1f099c.chunk.js": "/softryzen-test-task/static/js/276.9a1f099c.chunk.js",
@@ -11,8 +11,8 @@
     "static/media/background.png": "/softryzen-test-task/static/media/background.e1f3bf3d03ea71d69701.png",
     "index.html": "/softryzen-test-task/index.html",
     "main.1340d65d.css.map": "/softryzen-test-task/static/css/main.1340d65d.css.map",
-    "main.276d08e9.js.map": "/softryzen-test-task/static/js/main.276d08e9.js.map",
-    "271.6f583375.chunk.js.map": "/softryzen-test-task/static/js/271.6f583375.chunk.js.map",
+    "main.677485cf.js.map": "/softryzen-test-task/static/js/main.677485cf.js.map",
+    "271.598e8acc.chunk.js.map": "/softryzen-test-task/static/js/271.598e8acc.chunk.js.map",
     "63.5370ae60.chunk.js.map": "/softryzen-test-task/static/js/63.5370ae60.chunk.js.map",
     "739.fee40519.chunk.js.map": "/softryzen-test-task/static/js/739.fee40519.chunk.js.map",
     "276.9a1f099c.chunk.js.map": "/softryzen-test-task/static/js/276.9a1f099c.chunk.js.map",
@@ -21,6 +21,6 @@
   },
   "entrypoints": [
     "static/css/main.1340d65d.css",
-    "static/js/main.276d08e9.js"
+    "static/js/main.677485cf.js"
   ]
 }
