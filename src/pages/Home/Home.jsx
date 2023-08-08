@@ -35,8 +35,8 @@ import { Link } from 'react-router-dom';
 
 export default function Home({ events }) {
   const [filter, setFilter] = useState('');
-  const [error, setError] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [error] = useState(null);
+  const [setSelectedCategory] = useState('');
 
   const onOptionClick = e => {
     const { value } = e.target;
@@ -46,47 +46,64 @@ export default function Home({ events }) {
     const { value } = e.target;
     setFilter(value);
   };
-  function getFilteredEvents() {
-    try {
-      let filteredEvents;
-      if (
-        (!filter && selectedCategory === '') ||
-        (!filter && selectedCategory === 'All')
-      ) {
-        return events;
-      } else {
-        if ((selectedCategory === 'All' && filter) || filter) {
-          const normalizedFilter = filter.toLocaleLowerCase();
-          filteredEvents = events.filter(({ name }) => {
-            const normalizedName = name.toLocaleLowerCase();
-            const result = normalizedName.includes(normalizedFilter);
-            return result;
-          });
-        } else if (selectedCategory) {
-          filteredEvents = events.filter(
-            item => item.category === selectedCategory
-          );
-        }
+  // function getFilteredEvents() {
+  //   try {
+  //     if (filter) {
+  //       const normalizedFilter = filter.toLocaleLowerCase();
+  //       const filteredEvents = events.filter(({ name }) => {
+  //         const normalizedName = name.toLocaleLowerCase();
+  //         const result = normalizedName.includes(normalizedFilter);
+  //         return result;
+  //       });
+  //       return filteredEvents;
+  //     } else if (selectedCategory) {
+  //       const filteredEvents = events.filter(
+  //         item => item.category === selectedCategory
+  //       );
+  //       return filteredEvents;
+  //     }
+  //   } catch (e) {
+  //     setError(e);
+  //   }
+  //   // try {
+  //   //   let filteredEvents;
+  //   //   if (
+  //   //     (!filter && selectedCategory === '') ||
+  //   //     (!filter && selectedCategory === 'All')
+  //   //   ) {
+  //   //     return events;
+  //   //   } else {
+  //   //     if ((selectedCategory === 'All' && filter) || filter) {
+  //   //       const normalizedFilter = filter.toLocaleLowerCase();
+  //   //       filteredEvents = events.filter(({ name }) => {
+  //   //         const normalizedName = name.toLocaleLowerCase();
+  //   //         const result = normalizedName.includes(normalizedFilter);
+  //   //         return result;
+  //   //       });
+  //   //     } else if (selectedCategory) {
+  //   //       filteredEvents = events.filter(
+  //   //         item => item.category === selectedCategory
+  //   //       );
+  //   //     }
+  //   //     if (filter && selectedCategory) {
+  //   //       const normalizedFilter = filter.toLocaleLowerCase();
+  //   //       filteredEvents = events.filter(({ name }) => {
+  //   //         const normalizedName = name.toLocaleLowerCase();
+  //   //         const result = normalizedName.includes(normalizedFilter);
+  //   //         return result;
+  //   //       });
+  //   //       filteredEvents = filteredEvents.filter(
+  //   //         item => item.category === selectedCategory
+  //   //       );
+  //   //     }
+  //   //   }
+  //   //   return filteredEvents;
+  //   // } catch (e) {
+  //   //   setError(e);
+  //   // }
+  // }
 
-        if (filter && selectedCategory) {
-          const normalizedFilter = filter.toLocaleLowerCase();
-          filteredEvents = events.filter(({ name }) => {
-            const normalizedName = name.toLocaleLowerCase();
-            const result = normalizedName.includes(normalizedFilter);
-            return result;
-          });
-          filteredEvents = filteredEvents.filter(
-            item => item.category === selectedCategory
-          );
-        }
-      }
-      return filteredEvents;
-    } catch (e) {
-      setError(e);
-    }
-  }
-
-  const eventsFiltered = getFilteredEvents();
+  const eventsFiltered = events;
   return (
     <>
       <HeaderSection>
