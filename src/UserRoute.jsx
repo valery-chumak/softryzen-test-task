@@ -22,11 +22,15 @@ export default function UserRoute() {
   };
 
   useEffect(() => {
-    const fetchDataAndSetEvents = async () => {
-      await fetchData();
-    };
+    try {
+      const fetchDataAndSetEvents = async () => {
+        await fetchData();
+      };
 
-    fetchDataAndSetEvents();
+      fetchDataAndSetEvents();
+    } catch (e) {
+      setError(e);
+    }
   }, []);
 
   const addEvent = async event => {
