@@ -35,7 +35,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home({ events }) {
   const [filter, setFilter] = useState('');
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
   const [setSelectedCategory] = useState('');
 
   const onOptionClick = e => {
@@ -46,23 +46,23 @@ export default function Home({ events }) {
     const { value } = e.target;
     setFilter(value);
   };
-  function getFilteredEvents() {
-    try {
-      if (!filter) {
-        return events;
-      }
-      const normalizedFilter = filter.toLocaleLowerCase();
+  // function getFilteredEvents() {
+  //   try {
+  //     if (!filter) {
+  //       return events;
+  //     }
+  //     const normalizedFilter = filter.toLocaleLowerCase();
 
-      const filteredEvents = events.filter(({ name }) => {
-        const normalizedName = name.toLocaleLowerCase();
-        const result = normalizedName.includes(normalizedFilter);
-        return result;
-      });
-      return filteredEvents;
-    } catch (e) {
-      setError(e);
-    }
-  }
+  //     const filteredEvents = events.filter(({ name }) => {
+  //       const normalizedName = name.toLocaleLowerCase();
+  //       const result = normalizedName.includes(normalizedFilter);
+  //       return result;
+  //     });
+  //     return filteredEvents;
+  //   } catch (e) {
+  //     setError(e);
+  //   }
+  // }
   // function getFilteredEvents() {
   //   try {
   //     if (filter) {
@@ -120,7 +120,7 @@ export default function Home({ events }) {
   //   // }
   // }
 
-  const eventsFiltered = getFilteredEvents();
+  const eventsFiltered = events;
   return (
     <>
       <HeaderSection>
