@@ -46,23 +46,7 @@ export default function Home({ events }) {
     const { value } = e.target;
     setFilter(value);
   };
-  // function getFilteredEvents() {
-  //   try {
-  //     if (!filter) {
-  //       return events;
-  //     }
-  //     const normalizedFilter = filter.toLocaleLowerCase();
 
-  //     const filteredEvents = events.filter(({ name }) => {
-  //       const normalizedName = name.toLocaleLowerCase();
-  //       const result = normalizedName.includes(normalizedFilter);
-  //       return result;
-  //     });
-  //     return filteredEvents;
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
   function getFilteredEvents() {
     try {
       if (filter) {

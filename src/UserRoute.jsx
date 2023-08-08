@@ -67,15 +67,20 @@ export default function UserRoute() {
 
   return (
     <Suspense fallback={<p>Loading...</p>}>
-      <Routes>
-        <Route path="/" element={<Home events={events} />} />
-        <Route path="*" element={<Home events={events} />} />
-        <Route path="/add" element={<AddEvent onSubmit={addEvent} />} />
-        <Route
-          path="/events/:eventId"
-          element={<EventDetails data={events} onDelete={handleDelete} />}
-        ></Route>
-      </Routes>
+      {/* Display loading if events is null */}
+      {events === null ? (
+        <p>Loading...</p>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home events={events} />} />
+          <Route path="*" element={<Home events={events} />} />
+          <Route path="/add" element={<AddEvent onSubmit={addEvent} />} />
+          <Route
+            path="/events/:eventId"
+            element={<EventDetails data={events} onDelete={handleDelete} />}
+          />
+        </Routes>
+      )}
     </Suspense>
   );
 }
