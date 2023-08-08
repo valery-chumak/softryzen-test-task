@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/softryzen-test-task/static/css/main.1340d65d.css",
-    "main.js": "/softryzen-test-task/static/js/main.f8b83fd4.js",
-    "static/js/271.87cffb48.chunk.js": "/softryzen-test-task/static/js/271.87cffb48.chunk.js",
-    "static/js/63.a6e34b10.chunk.js": "/softryzen-test-task/static/js/63.a6e34b10.chunk.js",
-    "static/js/739.fc3984f0.chunk.js": "/softryzen-test-task/static/js/739.fc3984f0.chunk.js",
+    "main.js": "/softryzen-test-task/static/js/main.85458417.js",
+    "static/js/271.908e190c.chunk.js": "/softryzen-test-task/static/js/271.908e190c.chunk.js",
+    "static/js/63.5370ae60.chunk.js": "/softryzen-test-task/static/js/63.5370ae60.chunk.js",
+    "static/js/739.fee40519.chunk.js": "/softryzen-test-task/static/js/739.fee40519.chunk.js",
     "static/js/276.9a1f099c.chunk.js": "/softryzen-test-task/static/js/276.9a1f099c.chunk.js",
-    "static/js/598.b542fe90.chunk.js": "/softryzen-test-task/static/js/598.b542fe90.chunk.js",
+    "static/js/598.afbd8455.chunk.js": "/softryzen-test-task/static/js/598.afbd8455.chunk.js",
     "static/js/942.ebb01029.chunk.js": "/softryzen-test-task/static/js/942.ebb01029.chunk.js",
     "static/media/background.png": "/softryzen-test-task/static/media/background.e1f3bf3d03ea71d69701.png",
     "index.html": "/softryzen-test-task/index.html",
     "main.1340d65d.css.map": "/softryzen-test-task/static/css/main.1340d65d.css.map",
-    "main.f8b83fd4.js.map": "/softryzen-test-task/static/js/main.f8b83fd4.js.map",
-    "271.87cffb48.chunk.js.map": "/softryzen-test-task/static/js/271.87cffb48.chunk.js.map",
-    "63.a6e34b10.chunk.js.map": "/softryzen-test-task/static/js/63.a6e34b10.chunk.js.map",
-    "739.fc3984f0.chunk.js.map": "/softryzen-test-task/static/js/739.fc3984f0.chunk.js.map",
+    "main.85458417.js.map": "/softryzen-test-task/static/js/main.85458417.js.map",
+    "271.908e190c.chunk.js.map": "/softryzen-test-task/static/js/271.908e190c.chunk.js.map",
+    "63.5370ae60.chunk.js.map": "/softryzen-test-task/static/js/63.5370ae60.chunk.js.map",
+    "739.fee40519.chunk.js.map": "/softryzen-test-task/static/js/739.fee40519.chunk.js.map",
     "276.9a1f099c.chunk.js.map": "/softryzen-test-task/static/js/276.9a1f099c.chunk.js.map",
-    "598.b542fe90.chunk.js.map": "/softryzen-test-task/static/js/598.b542fe90.chunk.js.map",
+    "598.afbd8455.chunk.js.map": "/softryzen-test-task/static/js/598.afbd8455.chunk.js.map",
     "942.ebb01029.chunk.js.map": "/softryzen-test-task/static/js/942.ebb01029.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1340d65d.css",
-    "static/js/main.f8b83fd4.js"
+    "static/js/main.85458417.js"
   ]
 }
