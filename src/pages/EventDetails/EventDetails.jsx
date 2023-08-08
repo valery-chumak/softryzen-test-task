@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import data from '../../data.json';
 import Header from 'components/Header/Header';
 import {
   MainContainer,
@@ -23,8 +23,9 @@ const priorityToColor = {
   Medium: '#E2A300',
   High: 'rgba(255, 43, 119, 1)',
 };
-export default function EventDetails() {
-  const [state, setState] = useState(null);
+
+export default function EventDetails({ onDelete, data }) {
+  const [event, setEvent] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -34,7 +35,7 @@ export default function EventDetails() {
       try {
         setLoading(true);
         const result = await data.find(event => event.id === eventId);
-        setState(result);
+        setEvent(result);
       } catch (e) {
         setError(e);
       } finally {
@@ -43,11 +44,12 @@ export default function EventDetails() {
     };
     fetchEvent();
   }, [eventId]);
+
   return (
     <>
       {loading && <p>Loading...</p>}
       {error && <p>Something went wrong</p>}
-      {state && (
+      {event && (
         <>
           <Header />
           <Section>
@@ -58,23 +60,25 @@ export default function EventDetails() {
                 </Icon>
                 Back
               </StyledLink>
-              <Title>{state.name}</Title>
+              <Title>{event.name}</Title>
               <Item>
-                <Image src={state.path} alt={state.name} />
-                <Description id="description">{state.description}</Description>
+                <Image src={event.path} alt={event.name} />
+                <Description id="description">{event.description}</Description>
                 <ListInfo>
-                  <Info>{state.category}</Info>
-                  <Info style={{ color: priorityToColor[state.priority] }}>
-                    {state.priority}
+                  <Info>{event.category}</Info>
+                  <Info style={{ color: priorityToColor[event.priority] }}>
+                    {event.priority}
                   </Info>
-                  <Info>{state.place}</Info>
+                  <Info>{event.place}</Info>
                   <Info>
-                    {state.date} at {state.time}
+                    {event.date} at {event.time}
                   </Info>
                 </ListInfo>
                 <ButtonWrapper>
                   <ButtonEdit>Edit</ButtonEdit>
-                  <ButtonDelete>Delete</ButtonDelete>
+                  <ButtonDelete onClick={() => onDelete(eventId)}>
+                    Delete
+                  </ButtonDelete>
                 </ButtonWrapper>
               </Item>
             </MainContainer>

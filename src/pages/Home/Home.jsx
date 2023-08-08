@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-
 import EventList from 'components/EventList/EventList';
-import data from '../../data.json';
 import { CiFilter } from 'react-icons/ci';
 import { LiaSlidersHSolid } from 'react-icons/lia';
 import { AiOutlinePlus } from 'react-icons/ai';
@@ -31,11 +29,26 @@ import {
   ButtonName,
 } from './Home.styled';
 import { Link } from 'react-router-dom';
-export default function Home() {
-  const [items] = useState(data);
+const CategoryOptions = [
+  { value: 'Art', label: 'Art' },
+  { value: 'Music', label: 'Music' },
+  { value: 'Business', label: 'Business' },
+  { value: 'Conference', label: 'Conference' },
+  { value: 'Workshop', label: 'Workshop' },
+  { value: 'Party', label: 'Party' },
+  { value: 'Sport', label: 'Sport' },
+];
+export default function Home({ events }) {
   const [filter, setFilter] = useState('');
   const [error, setError] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
+  const handleCategoryChange = event => {
+    const category = event.target.value;
+    setSelectedCategory(category);
+    getCategoryFiltered(category);
+  };
+  function getCategoryFiltered() {}
   const handleInputChange = e => {
     const { value } = e.target;
     setFilter(value);
@@ -44,10 +57,10 @@ export default function Home() {
   function getFilteredEvents() {
     try {
       if (!filter) {
-        return items;
+        return events;
       }
       const normalizedFilter = filter.toLocaleLowerCase();
-      const filteredEvents = items.filter(({ name }) => {
+      const filteredEvents = events.filter(({ name }) => {
         const normalizedName = name.toLocaleLowerCase();
         const result = normalizedName.includes(normalizedFilter);
         return result;
@@ -98,12 +111,14 @@ export default function Home() {
                   <CiFilter size={18} />
                 </IconFilter>
               </CategoryButton>
+
               <SortButton>
                 <ButtonName>Sort by</ButtonName>
                 <IconSlider>
                   <LiaSlidersHSolid size={18} />
                 </IconSlider>
               </SortButton>
+
               <Link to="/add">
                 <AddButton>
                   <IconAdd>

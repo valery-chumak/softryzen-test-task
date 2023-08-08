@@ -29,25 +29,22 @@ const PriorityOptions = [
   { value: 'Medium', label: 'Medium' },
   { value: 'High', label: 'High' },
 ];
-
+const initialState = {
+  name: '',
+  path: 'https://res.cloudinary.com/dorqebe0a/image/upload/v1691504034/ov4ivp3bfxcphn8vg3y8.png',
+  date: '',
+  time: '',
+  place: '',
+  category: '',
+  priority: '',
+  description: '',
+};
 export default function AddEvent({ onSubmit }) {
-  const initialState = {
-    name: '',
-    path: 'https://res.cloudinary.com/dorqebe0a/image/upload/v1691064111/scoqlhuccd1pc5sbhiul.jpg',
-    date: '',
-    time: '',
-    place: '',
-    category: '',
-    priority: '',
-    description: '',
-  };
-
-  const [state, setState] = useState(initialState);
-  const [loading] = useState(false);
+  const [event, setEvent] = useState(initialState);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
-    setState(prev => {
+    setEvent(prev => {
       return {
         ...prev,
         [name]: value,
@@ -55,118 +52,129 @@ export default function AddEvent({ onSubmit }) {
     });
   };
   const handleCategoryChange = event => {
-    const { label, value } = event;
-    setState(prev => {
+    const { value } = event;
+    setEvent(prev => {
       return {
         ...prev,
-        [label]: value,
+        category: value,
       };
     });
   };
-  // const resetForm = () => {
-  //   setState(initialState);
-  // };
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-  //   const { name, path, date, time, place, category, priority, description } =
-  //     state;
-  //   onSubmit({
-  //     name,
-  //     path,
-  //     date,
-  //     time,
-  //     place,
-  //     category,
-  //     priority,
-  //     description,
-  //   });
-  //   resetForm();
-  // };
+  const handlePriorityChange = event => {
+    const { value } = event;
+    setEvent(prev => {
+      return {
+        ...prev,
+        priority: value,
+      };
+    });
+  };
+  const resetForm = () => {
+    setEvent(initialState);
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    const { name, path, date, time, place, category, priority, description } =
+      event;
+    onSubmit({
+      name,
+      path,
+      date,
+      time,
+      place,
+      category,
+      priority,
+      description,
+    });
+    resetForm();
+  };
+
   return (
     <>
-      {loading && <p>Loading...</p>}(
-      <>
-        <Header />
-        <Section>
-          <MainContainer>
-            <StyledLink to="/">
-              <Icon>
-                <AiOutlineArrowLeft />
-              </Icon>
-              Back
-            </StyledLink>
-            <Title>Create new event</Title>
-            <Wrapper>
-              <Label>
-                Title
-                <Input
-                  name="name"
-                  value={state.name}
-                  onChange={handleInputChange}
-                ></Input>
-              </Label>
-              <Label id="description">
-                Description
-                <Input
-                  name="description"
-                  value={state.description}
-                  onChange={handleInputChange}
-                ></Input>
-              </Label>
-              <Label>
-                Select date
-                <Input
-                  name="date"
-                  type="date"
-                  value={state.date}
-                  onChange={handleInputChange}
-                ></Input>
-              </Label>
-              <Label id="time">
-                Select time
-                <Input
-                  type="time"
-                  name="time"
-                  value={state.time}
-                  onChange={handleInputChange}
-                ></Input>
-              </Label>
-              <Label id="location">
-                Location
-                <Input
-                  name="place"
-                  value={state.place}
-                  onChange={handleInputChange}
-                ></Input>
-              </Label>
-              <Label id="category">
-                Category
-                <StyledSelect
-                  name="category"
-                  value={state.category}
-                  onChange={handleCategoryChange}
-                  options={CategoryOptions}
-                />
-              </Label>
-              <Label id="picture">
-                Add picture
-                <Input disabled></Input>
-              </Label>
-              <Label id="priority">
-                Priority
-                <StyledSelect
-                  name="priority"
-                  value={state.priority}
-                  onChange={handleCategoryChange}
-                  options={PriorityOptions}
-                />
-              </Label>
-              <Button>Add event</Button>
-            </Wrapper>
-          </MainContainer>
-        </Section>
-      </>
-      )
+      <Header />
+      <Section>
+        <MainContainer>
+          <StyledLink to="/">
+            <Icon>
+              <AiOutlineArrowLeft />
+            </Icon>
+            Back
+          </StyledLink>
+          <Title>Create new event</Title>
+          <Wrapper onSubmit={handleSubmit}>
+            <Label>
+              Title
+              <Input
+                name="name"
+                value={event.name}
+                onChange={handleInputChange}
+                required
+              ></Input>
+            </Label>
+            <Label id="description">
+              Description
+              <Input
+                name="description"
+                value={event.description}
+                onChange={handleInputChange}
+                required
+              ></Input>
+            </Label>
+            <Label>
+              Select date
+              <Input
+                name="date"
+                type="date"
+                value={event.date}
+                onChange={handleInputChange}
+                required
+              ></Input>
+            </Label>
+            <Label id="time">
+              Select time
+              <Input
+                type="time"
+                name="time"
+                value={event.time}
+                onChange={handleInputChange}
+                required
+              ></Input>
+            </Label>
+            <Label id="location">
+              Location
+              <Input
+                name="place"
+                value={event.place}
+                onChange={handleInputChange}
+                required
+              ></Input>
+            </Label>
+            <Label id="category">
+              Category
+              <StyledSelect
+                name="category"
+                onChange={handleCategoryChange}
+                options={CategoryOptions}
+                required
+              />
+            </Label>
+            <Label id="picture">
+              Add picture
+              <Input disabled></Input>
+            </Label>
+            <Label id="priority">
+              Priority
+              <StyledSelect
+                name="priority"
+                onChange={handlePriorityChange}
+                options={PriorityOptions}
+                required
+              />
+            </Label>
+            <Button type="submit">Add event</Button>
+          </Wrapper>
+        </MainContainer>
+      </Section>
     </>
   );
 }
