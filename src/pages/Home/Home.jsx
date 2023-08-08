@@ -27,44 +27,59 @@ import {
   IconSlider,
   IconAdd,
   ButtonName,
+  DropDown,
+  Content,
+  Option,
 } from './Home.styled';
 import { Link } from 'react-router-dom';
-const CategoryOptions = [
-  { value: 'Art', label: 'Art' },
-  { value: 'Music', label: 'Music' },
-  { value: 'Business', label: 'Business' },
-  { value: 'Conference', label: 'Conference' },
-  { value: 'Workshop', label: 'Workshop' },
-  { value: 'Party', label: 'Party' },
-  { value: 'Sport', label: 'Sport' },
-];
+
 export default function Home({ events }) {
   const [filter, setFilter] = useState('');
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  const handleCategoryChange = event => {
-    const category = event.target.value;
-    setSelectedCategory(category);
-    getCategoryFiltered(category);
+  const onOptionClick = e => {
+    const { value } = e.target;
+    setSelectedCategory(value);
   };
-  function getCategoryFiltered() {}
   const handleInputChange = e => {
     const { value } = e.target;
     setFilter(value);
   };
-
   function getFilteredEvents() {
     try {
-      if (!filter) {
+      let filteredEvents;
+      if (
+        (!filter && selectedCategory === '') ||
+        (!filter && selectedCategory === 'All')
+      ) {
         return events;
+      } else {
+        if ((selectedCategory === 'All' && filter) || filter) {
+          const normalizedFilter = filter.toLocaleLowerCase();
+          filteredEvents = events.filter(({ name }) => {
+            const normalizedName = name.toLocaleLowerCase();
+            const result = normalizedName.includes(normalizedFilter);
+            return result;
+          });
+        } else if (selectedCategory) {
+          filteredEvents = events.filter(
+            item => item.category === selectedCategory
+          );
+        }
+
+        if (filter && selectedCategory) {
+          const normalizedFilter = filter.toLocaleLowerCase();
+          filteredEvents = events.filter(({ name }) => {
+            const normalizedName = name.toLocaleLowerCase();
+            const result = normalizedName.includes(normalizedFilter);
+            return result;
+          });
+          filteredEvents = filteredEvents.filter(
+            item => item.category === selectedCategory
+          );
+        }
       }
-      const normalizedFilter = filter.toLocaleLowerCase();
-      const filteredEvents = events.filter(({ name }) => {
-        const normalizedName = name.toLocaleLowerCase();
-        const result = normalizedName.includes(normalizedFilter);
-        return result;
-      });
       return filteredEvents;
     } catch (e) {
       setError(e);
@@ -105,12 +120,80 @@ export default function Home({ events }) {
           <FilterBlock>
             <Title>My events</Title>
             <ButtonWrapper>
-              <CategoryButton>
-                <ButtonName>Category</ButtonName>
-                <IconFilter>
-                  <CiFilter size={18} />
-                </IconFilter>
-              </CategoryButton>
+              <DropDown>
+                <CategoryButton>
+                  <ButtonName>Category</ButtonName>
+                  <IconFilter>
+                    <CiFilter size={18} />
+                  </IconFilter>
+                </CategoryButton>
+                <Content id="content">
+                  <Option
+                    id="option"
+                    name="All"
+                    value="All"
+                    onClick={onOptionClick}
+                  >
+                    All
+                  </Option>
+                  <Option
+                    id="option"
+                    name="Art"
+                    value="Art"
+                    onClick={onOptionClick}
+                  >
+                    Art
+                  </Option>
+                  <Option
+                    id="option"
+                    name="Music"
+                    value="Music"
+                    onClick={onOptionClick}
+                  >
+                    Music
+                  </Option>
+                  <Option
+                    id="option"
+                    name="Business"
+                    value="Business"
+                    onClick={onOptionClick}
+                  >
+                    Business
+                  </Option>
+                  <Option
+                    id="option"
+                    name="Conference"
+                    value="Conference"
+                    onClick={onOptionClick}
+                  >
+                    Conference
+                  </Option>
+                  <Option
+                    id="option"
+                    name="Workshop"
+                    value="Workshop"
+                    onClick={onOptionClick}
+                  >
+                    Workshop
+                  </Option>
+                  <Option
+                    id="option"
+                    name="Party"
+                    value="Party"
+                    onClick={onOptionClick}
+                  >
+                    Party
+                  </Option>
+                  <Option
+                    id="option"
+                    name="Sport"
+                    value="Sport"
+                    onClick={onOptionClick}
+                  >
+                    Sport
+                  </Option>
+                </Content>
+              </DropDown>
 
               <SortButton>
                 <ButtonName>Sort by</ButtonName>

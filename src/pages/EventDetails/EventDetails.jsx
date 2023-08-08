@@ -43,7 +43,7 @@ export default function EventDetails({ onDelete, data }) {
       }
     };
     fetchEvent();
-  }, [eventId]);
+  }, [eventId, data]);
 
   return (
     <>

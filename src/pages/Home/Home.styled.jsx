@@ -169,3 +169,35 @@ export const IconAdd = styled.span`
     margin-right: 16px;
   }
 `;
+export const DropDown = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover #content {
+    display: block;
+  }
+`;
+export const Content = styled.ul`
+  display: none;
+  width: 158px;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+
+  &#option:hover {
+    background-color: #ddd;
+  }
+`;
+export const Option = styled.button`
+  width: -webkit-fill-available;
+  text-align: left;
+  padding-left: 30px;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: 1px solid var(--divider, #aca7c3);
+  background: #fff;
+`;
