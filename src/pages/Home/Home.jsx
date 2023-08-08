@@ -60,7 +60,7 @@ export default function Home({ events }) {
   //     });
   //     return filteredEvents;
   //   } catch (e) {
-  //     setError(e);
+  //     console.log(e);
   //   }
   // }
   // function getFilteredEvents() {
